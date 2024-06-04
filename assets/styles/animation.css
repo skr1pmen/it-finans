@@ -1,0 +1,6 @@
+@keyframes fade-right {
+    to {
+        opacity: 1;
+        transform: translateX(-50%);
+    }
+}

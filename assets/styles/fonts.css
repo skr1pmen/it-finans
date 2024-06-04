@@ -1,0 +1,10 @@
+@import url('https://fonts.cdnfonts.com/css/jura');
+@import url('https://fonts.cdnfonts.com/css/clear-sans');
+@font-face {
+    font-family: 'Benzin SemiBold';
+    src: url('../fonts/Benzin-Semibold.ttf');
+}
+@font-face {
+    font-family: 'Benzin ExtraBold';
+    src: url('../fonts/Benzin-ExtraBold.ttf');
+}
