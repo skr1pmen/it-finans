@@ -47,7 +47,6 @@ window.addEventListener('DOMContentLoaded', () => {
 })
 
 
-//
 // const links = ['#Home', '#Service', "#IndustryOne", "#IndustryTwo", "#Stage", "#Technologies", "#Building", "#Contacts"];
 // const pageWrapper = document.querySelector('.page__wrapper');
 // const moveToLink = (swap) => {
@@ -135,48 +134,6 @@ industryBtn.forEach((item) => {
     });
 });
 
-// const fade_right = document.querySelectorAll(`[data-animation = 'fade-right']`);
-// if (!fade_right.length) {
-//     window.addEventListener('scroll', animation);
-//
-//     function animation() {
-//         for (let index = 0; index < fade_right.length; index++) {
-//             const animItem = fade_right[index];
-//             const animItemHeight = animItem.offsetHeight;
-//             const animItemOffset = offset(animItem).top;
-//             const animStart = 4;
-//
-//             let animItemPoint = window.innerHeight - animItemHeight / animStart;
-//             if (animItemHeight > window.innerHeight) {
-//                 animItemPoint = window.innerHeight - window.innerHeight / animStart;
-//             }
-//
-//             if ((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset + animItemHeight)) {
-//                 animItem.style.animation = 'fade-right';
-//                 animItem.style.animationDuration = '.4s';
-//                 animItem.style.animationFillMode = 'forwards';
-//             }
-//         }
-//
-//         function offset(el) {
-//             const rect = el.getBoundingClientRect(),
-//                 scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
-//                 scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-//             return {top: rect.top + scrollTop, left: rect.left + scrollLeft}
-//         }
-//
-//         setTimeout(() => {
-//             animation();
-//         }, 500);
-//         // fade_right.forEach((el) => {
-//         //     el.style.animation = 'fade-right';
-//         //     el.style.animationDuration = '.4s';
-//         //     el.style.animationFillMode = 'forwards';
-//         // })
-//     }
-// }
-
-
 /** Form code */
 
 const order = [];
@@ -227,39 +184,39 @@ userPhone.addEventListener("input", () => {
 
 
 /** Form submission */
-// const feedbackForm = document.getElementById("feedback-form");
-//
-// const loaderElem = document.querySelector(".loader");
-//
-// feedbackForm.onsubmit = async (e) => {
-//     loaderElem.classList.add("active");
-//     feedbackForm.disabled = true;
-//
-//     try {
-//         e.preventDefault();
-//         order.forEach((choice, i) => {
-//             order[i] = choice
-//                 .toLowerCase()
-//                 .replace("\n", " ");
-//         });
-//         let data = new FormData(feedbackForm);
-//         data.append("user_choice_type", order[0]);
-//         data.append("user_choice_platform", order[1]);
-//         data.append("user_choice_work_stage", order[2]);
-//         data.append("user_choice_start_work", order[3]);
-//
-//         let response = await fetch('/feedback', {
-//             method: 'POST',
-//             body: data
-//         });
-//
-//         let result = await response.json();
-//
-//         alert(result?.data?.message || result.message || result.error_text);
-//     } catch (e) {
-//         alert("Не удалось отправить Вашу заявку. Пожалуйста, свяжитесь с нами по телефону или по почте");
-//     } finally {
-//         loaderElem.classList.remove("active");
-//         feedbackForm.disabled = false;
-//     }
-// };
+const feedbackForm = document.getElementById("feedback-form");
+
+const loaderElem = document.querySelector(".loader");
+
+feedbackForm.onsubmit = async (e) => {
+    loaderElem.classList.add("active");
+    feedbackForm.disabled = true;
+
+    try {
+        e.preventDefault();
+        order.forEach((choice, i) => {
+            order[i] = choice
+                .toLowerCase()
+                .replace("\n", " ");
+        });
+        let data = new FormData(feedbackForm);
+        data.append("user_choice_type", order[0]);
+        data.append("user_choice_platform", order[1]);
+        data.append("user_choice_work_stage", order[2]);
+        data.append("user_choice_start_work", order[3]);
+
+        let response = await fetch('/feedback', {
+            method: 'POST',
+            body: data
+        });
+
+        let result = await response.json();
+
+        alert(result?.data?.message || result.message || result.error_text);
+    } catch (e) {
+        alert("Не удалось отправить Вашу заявку. Пожалуйста, свяжитесь с нами по телефону или по почте");
+    } finally {
+        loaderElem.classList.remove("active");
+        feedbackForm.disabled = false;
+    }
+};
