@@ -1,4 +1,5 @@
 @import "./fonts.css";
+@import "./animation.css";
 
 :root {
     --h1-font-family: 'Benzin ExtraBold', sans-serif;
@@ -39,10 +40,12 @@ body {
     height: 100svh;
     overflow-y: auto;
 }
+
 .page__wrapper section {
     scroll-snap-align: start;
 }
-.page__wrapper.slider-locked{
+
+.page__wrapper.slider-locked {
     overflow: hidden;
 }
 
@@ -81,7 +84,7 @@ a {
     font-family: var(--text-family);
 }
 
-video,.bg {
+video, .bg {
     position: absolute;
     width: 100%;
     height: 100svh;
@@ -124,12 +127,6 @@ header {
 header.active {
     animation: header .4s ease-in-out 1.5s forwards;
 }
-@keyframes header {
-    to {
-        transform: translateX(-50%);
-        opacity: 1;
-    }
-}
 
 main {
     display: flex;
@@ -147,8 +144,10 @@ main {
         transition: all .4s linear;
         animation-delay: 1s;
     }
-    & .h1.active{
+
+    & .h1.active {
         animation: welcomeBlock .4s ease-in-out 1.6s forwards;
+
         & .btn {
             animation: opas .4s ease-in-out 2s forwards;
         }
@@ -223,6 +222,14 @@ main {
             padding: 30px;
             height: 166px;
             text-wrap: balance;
+            border-top: 1px solid #ffffff00;
+            transition: background .3s ease-in-out;
+            cursor: default;
+        }
+        & .serves_item:hover {
+            background: none;
+            color: var(--accent-color);
+            border-top: 1px solid var(--accent-color);
         }
     }
 
@@ -279,19 +286,6 @@ main {
     font-size: 40px;
 }
 
-@keyframes opas {
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes welcomeBlock {
-    to {
-        transform: translateX(0%);
-        opacity: 1;
-    }
-}
-
 .industry_block {
     width: 1400px;
     position: relative;
@@ -304,12 +298,10 @@ main {
     & .industry_items {
         padding-top: 115px;
         display: grid;
-        /*grid-gap: 20px;*/
         grid-template-columns: repeat(2, 1fr);
         width: 890px;
-        /*gap: 114px;*/
         grid-column-gap: 107px;
-        grid-row-gap: 100px;
+        grid-row-gap: 90px;
 
         & .industry_item {
             display: flex;
@@ -324,7 +316,7 @@ main {
             }
 
             & ul {
-                height: 209px;
+                height: 200px;
                 overflow: hidden;
                 display: flex;
                 flex-direction: column;
@@ -390,6 +382,7 @@ main {
 .industry_block.active:before {
     animation: spinLeft .8s ease-in-out .3s forwards;
 }
+
 .industry_block.active:after {
     animation: spinRight .8s ease-in-out .3s forwards;
 }
@@ -487,6 +480,7 @@ main {
         }
     }
 }
+
 .state_block.active {
     animation: fade .8s ease-in-out forwards;
     transform: translateX(100%);
@@ -579,6 +573,7 @@ main {
         }
     }
 }
+
 .technologies_block:before {
     content: "";
     position: absolute;
@@ -587,14 +582,11 @@ main {
     background: var(--background-third);
     top: 0;
 }
+
 .technologies_block.active:before {
     animation: marginTop .4s ease-in-out forwards;
 }
-@keyframes marginTop {
-    to {
-        top: -50px;
-    }
-}
+
 
 .building_block {
     background: var(--background-second);
@@ -693,6 +685,7 @@ main {
             height: 130px;
             color: var(--text-color);
             border-top: 1px solid #00000000;
+            transition: background .3s ease-in-out;
         }
 
         & .building_item:hover {
@@ -817,6 +810,7 @@ main {
                     font-size: var(--text-size);
                     transform: translateX(-100%);
                 }
+
                 & a {
                     transform: translateX(-100%);
                     display: block;
@@ -834,57 +828,5 @@ main {
             }
         }
 
-    }
-}
-
-@keyframes fadeUp {
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-@keyframes fade {
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-@keyframes fadeV2 {
-    to {
-        opacity: .2;
-    }
-}
-
-@keyframes border {
-    to {
-        border-top: 1px solid #fff;
-    }
-}
-@keyframes slide {
-    to {
-        transform: translateX(0);
-    }
-}
-
-@keyframes spinLeft {
-    from {
-        transform: rotate(90deg);
-        right: -50%;
-        transform-origin: 50% 75%;
-    }
-    to {
-        opacity: 1;
-    }
-}
-@keyframes spinRight {
-    from {
-        transform: rotate(90deg);
-        right: 50%;
-        transform-origin: 50% 75%;
-    }
-    to {
-        opacity: 1;
     }
 }
