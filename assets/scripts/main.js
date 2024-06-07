@@ -87,42 +87,43 @@ const onTransitionEnd = () => {
     pageWrapper.classList.remove('slider-locked');
 }
 
+if (window.innerWidth > 1024) {
+    let lastScroll = 0;
 
-let lastScroll = 0;
-
-document.addEventListener('scroll', (e) => {
-    e.preventDefault();
-    if (window.location.hash === '') {
-        window.location.hash = links[0]
-    }
-
-    let screenHeight = document.documentElement.clientHeight,
-        blockTopPosition = document.querySelector(window.location.hash).offsetTop,
-        blockHeight = document.querySelector(window.location.hash).offsetHeight,
-        blockBottomPosition = blockTopPosition + blockHeight;
-    console.clear()
-    console.debug("Высота экрана: " + screenHeight);
-    console.debug("Верхняя позиция блока: " + blockTopPosition);
-    console.debug("Высота блока: " + blockHeight);
-    console.debug("Нижняя позиция блока: " + blockBottomPosition);
-    console.debug("Текущий скролл: " + window.pageYOffset);
-
-    if (screenHeight < blockHeight) {
-        if (window.pageYOffset + screenHeight >= blockBottomPosition) {
-            moveToLink(1)
-        } else if (window.pageYOffset <= blockTopPosition) {
-            moveToLink(-1)
+    document.addEventListener('scroll', (e) => {
+        e.preventDefault();
+        if (window.location.hash === '') {
+            window.location.hash = links[0]
         }
-        return
-    } else {
-        if (lastScroll < window.pageYOffset) {
-            moveToLink(1);
+
+        let screenHeight = document.documentElement.clientHeight,
+            blockTopPosition = document.querySelector(window.location.hash).offsetTop,
+            blockHeight = document.querySelector(window.location.hash).offsetHeight,
+            blockBottomPosition = blockTopPosition + blockHeight;
+        console.clear()
+        console.debug("Высота экрана: " + screenHeight);
+        console.debug("Верхняя позиция блока: " + blockTopPosition);
+        console.debug("Высота блока: " + blockHeight);
+        console.debug("Нижняя позиция блока: " + blockBottomPosition);
+        console.debug("Текущий скролл: " + window.pageYOffset);
+
+        if (screenHeight < blockHeight) {
+            if (window.pageYOffset + screenHeight >= blockBottomPosition) {
+                moveToLink(1)
+            } else if (window.pageYOffset <= blockTopPosition) {
+                moveToLink(-1)
+            }
+            return
         } else {
-            moveToLink(-1);
+            if (lastScroll < window.pageYOffset) {
+                moveToLink(1);
+            } else {
+                moveToLink(-1);
+            }
         }
-    }
-    lastScroll = window.pageYOffset;
-}, {passive: false});
+        lastScroll = window.pageYOffset;
+    }, {passive: false});
+}
 
 
 const industryBtn = document.querySelectorAll('button.btn');

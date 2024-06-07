@@ -7,6 +7,7 @@
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
     <title>IT-Finans</title>
     <link rel="stylesheet" href="./assets/styles/style.css">
+    <link href="./assets/styles/media.css" rel="stylesheet">
     <link rel="shortcut icon" href="./assets/images/favicon.svg" type="image/x-icon">
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
@@ -35,6 +36,7 @@
         <div><img alt="" src="https://mc.yandex.ru/watch/97487337" style="position:absolute; left:-9999px;"/></div>
     </noscript>
     <!-- /Yandex.Metrika counter -->
+
 </head>
 <body>
     <style>
@@ -225,6 +227,10 @@
                         </defs>
                     </svg>
                 </a>
+                <input class="menu_link" id="menu" style="display: none" type="checkbox">
+                <label class="menu" for="menu">
+                    <span class="menu_btn"></span>
+                </label>
                 <nav>
                     <ul>
                         <li><a href="#Service">Услуги</a></li>
@@ -236,15 +242,16 @@
                 </nav>
             </header>
             <div class="container h1 animItems animStop">
-                Ваш цифровой проект</br> это всегда наш приоритет ( )
+                Ваш цифровой проект это всегда наш приоритет ( )
                 <span>Мы выполним качественно и в обговоренный срок для Вас любое IT-задание от простого чат-бота, до сложной CRM-системы;</span>
                 <a class="btn" href="#Building">Начать проект</a>
             </div>
         </main>
         <section id="Service" class="serves_block container">
             <div class="code_title animItems animStop">
-                Услуги ( )
+                Услуги ( ) <b class="staple staple-left">{</b>
                 <span></span>
+                <b class="staple staple-right">}</b>
             </div>
             <div class="serves_content animItems animStop">
                 <div class="serves_item">Создание сайтов</div>
@@ -256,8 +263,9 @@
         </section>
         <section id="IndustryOne" class="industry_block container animItems animStop">
             <div class="code_title">
-                Отрасли ( )
+                Отрасли ( ) <b class="staple staple-left">{</b>
                 <span>Мы создаём наши продукты для вас;</span>
+                <b class="staple staple-right">}</b>
             </div>
             <div class="industry_items">
                 <div class="industry_item">
@@ -374,8 +382,9 @@
         </section>
         <section id="Stage" class="state_block animItems animStop">
             <div class="code_title animItems animStop">
-                Этапы ( )
+                Этапы ( ) <b class="staple staple-left">{</b>
                 <span>Чтобы выполнить ваш проект качественно, он должен пройти следующие этапы;</span>
+                <b class="staple staple-right">}</b>
             </div>
             <div class="stage_items">
                 <div class="stage_item item1 animItems animStop">
@@ -410,8 +419,9 @@
             <div class="container">
                 <pre class="code">const stageItems = document.querySelectorAll(".stage_btn");<br>stageItems.forEach((item) => {<br>    item.addEventListener("click", () => {<br>        let panel = item.nextElementSibling;<br>        if (panel.classList.toggle("visible")){<br>            panel.classList.remove("visible");<br>        } else {<br>            panel.classList.add("visible");<br>        }<br>    });<br>});</pre>
                 <div class="code_title">
-                    Технологии ( )
+                    Технологии ( ) <b class="staple staple-left">{</b>
                     <span>Чтобы реализовать ваш проект мы можем вести разработку в следующих направлениях;</span>
+                    <b class="staple staple-right">}</b>
                 </div>
                 <div class="technologies_items">
                     <ul>
@@ -446,31 +456,31 @@
         </section>
         <section id="Building" class="building_block">
             <div class="code_title build_active_title animItems animStop">
-                выберите тип<br>вашего проекта ( )
+                выберите тип вашего проекта ( )
                 <span class="hint">
                     Шаг 1 из 5 ;
                 </span>
             </div>
             <div class="code_title active">
-                на какой платформе<br>нужен проект ? ( )
+                на какой платформе нужен проект ? ( )
                 <span class="hint">
                     Шаг 2 из 5 ;
                 </span>
             </div>
             <div class="code_title active">
-                на каком этапе<br>ваш проект сейчас ? ( )
+                на каком этапе ваш проект сейчас ? ( )
                 <span class="hint">
                     Шаг 3 из 5 ;
                 </span>
             </div>
             <div class="code_title active">
-                как быстро вы хотите<br>начать работу ? ( )
+                как быстро вы хотите начать работу ? ( )
                 <span class="hint">
                     Шаг 4 из 5 ;
                 </span>
             </div>
             <div class="code_title active">
-                заполните форму<br>для связи ( )
+                заполните форму для связи ( )
                 <span class="title_final">
                 </span>
             </div>
@@ -550,8 +560,9 @@
         <section class="contact_block" id="Contacts">
             <div class="container">
                 <div class="code_title build_active_title">
-                    Контакты для связи ( )
+                    Контакты для связи ( ) <b class="staple staple-left">{</b>
                     <span></span>
+                    <b class="staple staple-right">}</b>
                 </div>
                 <div class="contact_items">
                     <div class="contact_item animItems animStop">

@@ -1,3 +1,247 @@
+@media screen and (max-width: 1200px) {
+    main {
+        & .h1::before {
+            top: 35%;
+        }
+    }
+
+    .state_block {
+        & .stage_items {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    .building_block {
+        & .build_active_item {
+            justify-content: center;
+        }
+
+        & .final form {
+            & label {
+                & textarea {
+                    width: 180%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        & .h1::before {
+            top: 41%;
+        }
+    }
+
+    .industry_block {
+
+        & .industry_items {
+            width: 320px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            & .industry_item {
+                & ul {
+                    height: 190px;
+                }
+            }
+        }
+    }
+
+    .technologies_block {
+        & .code {
+            display: none;
+        }
+
+        & .technologies_items {
+            width: 90%;
+            margin: 43px auto;
+
+            & ul {
+                & ul {
+                    margin-left: calc(100% / 2);
+                }
+            }
+        }
+    }
+
+    .building_block {
+        & .final form {
+            & label {
+                & textarea {
+                    width: 120%;
+                }
+            }
+        }
+    }
+
+    .building_block {
+        & .code_title {
+            font-size: calc(var(--h1-font-size) - 10px);
+
+            & .title_final span:not(:last-child):after {
+                right: -3rem;
+            }
+        }
+
+        & .code_title:before {
+            right: -10px;
+            top: 26%;
+        }
+
+    }
+
+    .contact_block {
+        & .container {
+            & .code {
+                writing-mode: vertical-rl;
+                transform: rotate(180deg);
+                left: 78%;
+                bottom: 1%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .building_block {
+        & .final form {
+            flex-direction: column;
+
+            & label {
+                width: 100%;
+
+                & textarea {
+                    width: 100%;
+                }
+            }
+
+            & .btn {
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    header {
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+
+        & .menu {
+            width: max-content;
+            padding: 10px;
+            display: flex;
+            cursor: pointer;
+            flex-direction: column;
+            justify-content: center;
+            margin-top: -10px;
+        }
+
+        & .menu_btn, .menu_btn:after, .menu_btn:before {
+            width: 30px;
+            height: 4px;
+            display: block;
+            background: #fff;
+            position: relative;
+            cursor: pointer;
+            transition: all .2s ease-in-out;
+        }
+
+        & .menu > .menu_btn:after {
+            content: "";
+            top: -10px;
+            position: absolute;
+        }
+
+        & .menu > .menu_btn:before {
+            content: "";
+            top: 10px;
+            position: absolute;
+        }
+
+        & .menu_link:checked ~ .menu > .menu_btn {
+            background: none;
+        }
+
+        & .menu_link:checked ~ .menu > .menu_btn:after {
+            transform: rotate(45deg) translate(5px, 10px);
+        }
+
+        & .menu_link:checked ~ .menu > .menu_btn:before {
+            transform: rotate(-45deg) translate(4px, -10px);
+        }
+
+        & .menu_link:not(:checked) ~ nav {
+            transform: translateX(250%);
+        }
+
+        & nav {
+            position: absolute;
+            display: block;
+            top: 100%;
+            right: 0;
+            z-index: 2;
+            width: 30%;
+            transition: transform .3s linear;
+
+            & ul {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                & li {
+                    list-style: disc;
+                    color: var(--text-color);
+                }
+
+                & li a {
+                    font-size: clamp(0.938rem, 4.17vw, 1.25rem);
+                }
+            }
+        }
+
+        & nav:before,
+        & nav:after {
+            content: "{";
+            font-size: clamp(0.938rem, -1.875rem + 12.5vw, 1.875rem);
+            position: absolute;
+            color: var(--text-color);
+            font-family: var(--text-family);
+        }
+
+        & nav:before {
+            top: -2ch;
+            left: -4ch;
+        }
+
+        & nav:after {
+            content: "}";
+            left: -1ch;
+        }
+    }
+
+    .serves_block {
+        & .serves_content {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    .state_block {
+        & .stage_items {
+            display: flex;
+            flex-direction: column;
+
+            & .btn {
+                margin: 50px auto;
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 360px) {
     main {
         & .h1:before {
@@ -9,30 +253,7 @@
         }
     }
 
-
-    .serves_block {
-        & .serves_content {
-            grid-template-columns: repeat(2, 1fr);
-        }
-
-        & .code_title:before {
-            right: 45%;
-            top: -4.5px;
-        }
-
-        & .code_title:after {
-            bottom: -15px;
-        }
-    }
-
     .industry_block {
-        & .code_title {
-            width: 160px;
-        }
-
-        & .code_title:before {
-            right: 0;
-        }
 
         & .industry_items {
             width: 220px;
@@ -48,30 +269,7 @@
         }
     }
 
-    .state_block {
-        & .stage_items {
-            display: flex;
-            flex-direction: column;
-
-            & .btn {
-                margin: 50px auto;
-            }
-        }
-
-        & .code_title {
-            margin-top: 58px;
-        }
-    }
-
     .technologies_block {
-        & .code {
-            display: none;
-        }
-
-        & .code_title:before {
-            right: 0;
-        }
-
         & .technologies_items {
             width: 90%;
             margin: 43px auto;
