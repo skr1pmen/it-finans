@@ -1,0 +1,130 @@
+@media screen and (max-width: 360px) {
+    main {
+        & .h1:before {
+            top: 41.5%;
+        }
+
+        & .h1:after {
+            bottom: 20%;
+        }
+    }
+
+
+    .serves_block {
+        & .serves_content {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        & .code_title:before {
+            right: 45%;
+            top: -4.5px;
+        }
+
+        & .code_title:after {
+            bottom: -15px;
+        }
+    }
+
+    .industry_block {
+        & .code_title {
+            width: 160px;
+        }
+
+        & .code_title:before {
+            right: 0;
+        }
+
+        & .industry_items {
+            width: 220px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            & .industry_item {
+                & ul {
+                    height: 170px;
+                }
+            }
+        }
+    }
+
+    .state_block {
+        & .stage_items {
+            display: flex;
+            flex-direction: column;
+
+            & .btn {
+                margin: 50px auto;
+            }
+        }
+
+        & .code_title {
+            margin-top: 58px;
+        }
+    }
+
+    .technologies_block {
+        & .code {
+            display: none;
+        }
+
+        & .code_title:before {
+            right: 0;
+        }
+
+        & .technologies_items {
+            width: 90%;
+            margin: 43px auto;
+
+            & ul {
+                & ul {
+                    margin-left: calc(100% / 2);
+                }
+            }
+        }
+    }
+
+    .building_block {
+        & .code_title {
+            font-size: calc(var(--h1-font-size) - 10px);
+
+            & .title_final span:not(:last-child):after {
+                right: -1.75rem;
+            }
+        }
+
+        & .code_title:before {
+            right: -10px;
+            top: 26%;
+        }
+
+        & .code_title:after {
+            bottom: -40px;
+        }
+
+        & .final form {
+            & .btn {
+                margin: 0 auto;
+            }
+        }
+    }
+
+    .contact_block {
+        & .container {
+            & .code {
+                writing-mode: vertical-rl;
+                transform: rotate(180deg);
+                left: 78%;
+                bottom: 1%;
+            }
+
+            & .contact_items {
+                & .contact_item {
+                    & h4 {
+                        font-size: calc(var(--text-size) + 8px);
+                    }
+                }
+            }
+        }
+    }
+}
