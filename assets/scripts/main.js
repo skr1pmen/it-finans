@@ -100,12 +100,12 @@ if (window.innerWidth > 1024) {
             blockTopPosition = document.querySelector(window.location.hash).offsetTop,
             blockHeight = document.querySelector(window.location.hash).offsetHeight,
             blockBottomPosition = blockTopPosition + blockHeight;
-        console.clear()
-        console.debug("Высота экрана: " + screenHeight);
-        console.debug("Верхняя позиция блока: " + blockTopPosition);
-        console.debug("Высота блока: " + blockHeight);
-        console.debug("Нижняя позиция блока: " + blockBottomPosition);
-        console.debug("Текущий скролл: " + window.pageYOffset);
+        // console.clear()
+        // console.debug("Высота экрана: " + screenHeight);
+        // console.debug("Верхняя позиция блока: " + blockTopPosition);
+        // console.debug("Высота блока: " + blockHeight);
+        // console.debug("Нижняя позиция блока: " + blockBottomPosition);
+        // console.debug("Текущий скролл: " + window.pageYOffset);
 
         if (screenHeight < blockHeight) {
             if (window.pageYOffset + screenHeight >= blockBottomPosition) {
@@ -194,11 +194,11 @@ const feedbackForm = document.getElementById("feedback-form");
 const loaderElem = document.querySelector(".loader");
 
 feedbackForm.onsubmit = async (e) => {
+    e.preventDefault();
     loaderElem.classList.add("active");
     feedbackForm.disabled = true;
 
     try {
-        e.preventDefault();
         order.forEach((choice, i) => {
             order[i] = choice
                 .toLowerCase()
@@ -209,6 +209,7 @@ feedbackForm.onsubmit = async (e) => {
         data.append("user_choice_platform", order[1]);
         data.append("user_choice_work_stage", order[2]);
         data.append("user_choice_start_work", order[3]);
+        console.log(data)
 
         let response = await fetch('/feedback', {
             method: 'POST',
