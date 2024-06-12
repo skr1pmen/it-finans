@@ -10,7 +10,7 @@ window.addEventListener("load", () => {
 
     let bg = document.querySelector(".bg");
     let video = document.createElement('video');
-    video.src = './assets/videos/bg_3.mp4';
+    video.src = './assets/videos/bg_3.webm';
     video.muted = true;
     video.autoplay = true;
     video.loop = true;
