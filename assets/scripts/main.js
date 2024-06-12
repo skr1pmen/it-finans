@@ -16,7 +16,9 @@ window.addEventListener("load", () => {
     video.loop = true;
     video.playsInline = true;
     video.playbackRate = .8;
-    bg.replaceWith(video);
+    video.addEventListener('loadeddata', () => {
+        bg.replaceWith(video);
+    })
 
     let e = document.querySelectorAll(".animItems");
     if (e.length > 0) {
