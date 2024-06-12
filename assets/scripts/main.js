@@ -209,7 +209,6 @@ feedbackForm.onsubmit = async (e) => {
         data.append("user_choice_platform", order[1]);
         data.append("user_choice_work_stage", order[2]);
         data.append("user_choice_start_work", order[3]);
-        console.log(data)
 
         let response = await fetch('/feedback', {
             method: 'POST',
